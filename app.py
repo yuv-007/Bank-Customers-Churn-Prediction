@@ -45,7 +45,7 @@ opt_thr = art.get("optimal_threshold.pkl")
 
 # sensible default categorical options when encoders are missing
 default_cats = {
-    "Gender": ["F", "M", "Female", "Male", "Unknown"],
+    "Gender": ["F", "M", "Others"],
     "Income_Category": [
         "Less than $40K",
         "$40K - $60K",
@@ -54,7 +54,7 @@ default_cats = {
         "$120K +",
         "Unknown",
     ],
-    "Card_Category": ["Blue", "Silver", "Gold", "Platinum"],
+    "Card_Category": ["Blue", "Silver", "Gold", "Platinum", "Unknown"],
     "Marital_Status": ["Single", "Married", "Divorced", "Unknown"],
     "Education_Level": [
         "Unknown",
