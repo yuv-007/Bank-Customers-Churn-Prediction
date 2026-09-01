@@ -20,11 +20,11 @@ def find_file(name):
 def load_artifacts():
     artifacts = {}
     for name in [
-        "churn_model.pkl",
-        "feature_columns.pkl",
-        "encoders.pkl",
-        "scaler.pkl",
-        "optimal_threshold.pkl",
+        "model/churn_model.pkl",
+        "model/feature_columns.pkl",
+        "model/encoders.pkl",
+        "model/scaler.pkl",
+        "model/optimal_threshold.pkl",
     ]:
         path = find_file(name)
         if path:
@@ -37,11 +37,11 @@ def load_artifacts():
     return artifacts
 
 art = load_artifacts()
-model = art.get("churn_model.pkl")
-feature_columns = art.get("feature_columns.pkl")
-encoders = art.get("encoders.pkl") or {}
-scaler = art.get("scaler.pkl")
-opt_thr = art.get("optimal_threshold.pkl")
+model = art.get("model/churn_model.pkl")
+feature_columns = art.get("model/feature_columns.pkl")
+encoders = art.get("model/encoders.pkl") or {}
+scaler = art.get("model/scaler.pkl")
+opt_thr = art.get("model/optimal_threshold.pkl")
 
 # sensible default categorical options when encoders are missing
 default_cats = {
