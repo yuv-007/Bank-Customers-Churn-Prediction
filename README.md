@@ -133,7 +133,7 @@ The repository includes:
 
 ## Repository Structure
 
-```text
+```
 ChurnAnalytics/
 │
 ├── ChurnAnalytics.ipynb
@@ -161,5 +161,28 @@ ChurnAnalytics/
 
 ## Author
 
-**Aryan Verma**
+**Yuvraj Gupta**
 B.Tech, IIT (BHU) Varanasi
+
+## Streamlit App (Interactive Deployment)
+
+An interactive Streamlit dashboard is included to run the saved model on user-provided inputs or CSV files. The app expects the following pickle files to be present in the project root or `model/` folder:
+
+- `churn_model.pkl`
+- `feature_columns.pkl`
+- `encoders.pkl`
+- `scaler.pkl` (optional)
+- `optimal_threshold.pkl` (optional)
+
+Run the dashboard locally with:
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+Notes:
+
+- If `feature_columns.pkl` or `encoders.pkl` are missing the app will fall back to a reasonable default feature set and simple inputs — however predictions will be most accurate when the saved artifacts from the notebook are present.
+- Place the pickle files in the `model/` directory or project root so the app can find them automatically.
+
